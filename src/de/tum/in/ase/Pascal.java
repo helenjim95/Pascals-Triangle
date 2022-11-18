@@ -18,7 +18,7 @@ public class Pascal {
 
 
     public static ArrayList<ArrayList<Integer>> pascalTriangle(int numberOfRows) {
-        // TODO: build and return 2D triangle list
+        // Done: build and return 2D triangle list
         ArrayList<ArrayList<Integer>> total_rows = new ArrayList<>(); //result
         ArrayList<Integer> row = new ArrayList<>();
         for(int i = 0; i < numberOfRows; i++) {
@@ -39,13 +39,23 @@ public class Pascal {
      * @param args  arguments
      */
     public static void main(String[] args) {
-        // TODO: read user input n and print the triangle of height n
+        // Done: read user input n and print the triangle of height n
         int numberOfLines = InputReader.readInt("Enter the number of lines:");
         ArrayList<ArrayList<Integer>> triangle = pascalTriangle(numberOfLines);
-//        TODO: Print: All individual columns are separated by tabs \t.
+//        Done: Print: All individual columns are separated by tabs \t.
         for (int i = 0; i <triangle.size() ; i++) {
             List<Integer> current = triangle.get(i);
-            System.out.println(Arrays.toString(current.toArray()));
+            if (current.size() == 1) {
+                System.out.println(current.get(0));
+            } else {
+                for (int j = 0; j < current.size() - 1; j++) {
+                    System.out.print(current.get(j));
+                    System.out.print("\t");
+                }
+                System.out.print(current.get(current.size() - 1));
+                System.out.print("\n");
+            }
+//            System.out.println(Arrays.toString(current.toArray()));
         }
     }
 }
