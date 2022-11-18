@@ -45,7 +45,7 @@ public class Pascal {
 //        Done: Print: All individual columns are separated by tabs \t.
         for (int i = 0; i <triangle.size() ; i++) {
             List<Integer> current = triangle.get(i);
-            System.out.printf("n= %d\t", i);
+            System.out.printf("n=%d\t", i);
             if (current.size() == 1) {
                 System.out.print(current.get(0));
                 System.out.print("\n");
